@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
     private int mCount = 0;
     private TextView Count;
 
@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
        Count = (TextView) findViewById(R.id.show_count);
-        Log.i("LOG_TAG", " avant d'implémenter onSaveInstanceState() L'EditText ne contient plus le texte que vous avez entré, mais le compteur est conservé");
-        Log.i("LOG_TAG", "lorsqu'un changement de configuration de périphérique Android ferme immédiatement votre activité en appelant onStop(). Votre code doit redémarrer l'activité");
-        Log.i("LOG_TAG"," onSaveInstanceState() est appelée avant la méthode onResume()");
-       Log.i("LOG_TAG","onResume() ou onCreate()");
+        Log.i(LOG_TAG, " avant d'implémenter onSaveInstanceState() L'EditText ne contient plus le texte que vous avez entré, mais le compteur est conservé");
+        Log.i(LOG_TAG, "lorsqu'un changement de configuration de périphérique Android ferme immédiatement votre activité en appelant onStop(). Votre code doit redémarrer l'activité");
+        Log.i(LOG_TAG," onSaveInstanceState() est appelée avant la méthode onResume()");
+       Log.i(LOG_TAG,"onResume() ou onCreate()");
         if (savedInstanceState != null) {boolean isVisible =
                 savedInstanceState.getBoolean("reply");
 
